@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 220 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 20% 90%;
+    --secondary-foreground: 220 15% 20%;
+
+    --muted: 210 30% 95%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 190 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 210 100% 50%;
+
+    --radius: 1rem;
+
+    /* Weather-specific colors */
+    --sunny: 45 100% 60%;
+    --sunny-light: 45 100% 70%;
+    --cloudy: 210 15% 65%;
+    --cloudy-dark: 210 15% 45%;
+    --rainy: 210 80% 45%;
+    --rainy-dark: 210 80% 35%;
+    --stormy: 240 50% 30%;
+    --stormy-flash: 50 100% 80%;
+    --snowy: 200 20% 90%;
+    --snowy-ice: 195 50% 85%;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.15;
+    --glass-border: 0 0% 100% / 0.25;
+    --glass-shadow: 0 0% 0% / 0.1;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 210 30% 95%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 210 30% 95%;
+
+    --popover: 220 20% 15%;
+    --popover-foreground: 210 30% 95%;
+
+    --primary: 210 100% 55%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 220 20% 20%;
+    --secondary-foreground: 210 30% 95%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 190 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 210 100% 55%;
+
+    /* Weather-specific dark mode */
+    --sunny: 45 95% 55%;
+    --sunny-light: 45 95% 65%;
+    --cloudy: 210 12% 55%;
+    --cloudy-dark: 210 12% 35%;
+    --rainy: 210 70% 50%;
+    --rainy-dark: 210 70% 40%;
+    --stormy: 240 40% 25%;
+    --stormy-flash: 50 100% 75%;
+    --snowy: 200 15% 80%;
+    --snowy-ice: 195 40% 75%;
+
+    /* Glassmorphism dark */
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.15;
+    --glass-shadow: 0 0% 0% / 0.3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: 0 8px 32px 0 hsl(var(--glass-shadow));
+  }
+
+  /* Weather animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes rotate-sun {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes drift-cloud {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+  }
+
+  @keyframes rain-fall {
+    0% { 
+      transform: translateY(-100vh) translateX(0);
+      opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+      transform: translateY(100vh) translateX(-20px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes snow-fall {
+    0% { 
+      transform: translateY(-100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+      transform: translateY(100vh) translateX(100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes lightning-flash {
+    0%, 10%, 20%, 100% { opacity: 0; }
+    5%, 15% { opacity: 1; }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-rotate-sun { animation: rotate-sun 30s linear infinite; }
+  .animate-drift-cloud { animation: drift-cloud 20s linear infinite; }
+  .animate-rain-fall { animation: rain-fall 1s linear infinite; }
+  .animate-snow-fall { animation: snow-fall 3s linear infinite; }
+  .animate-lightning { animation: lightning-flash 4s ease-in-out infinite; }
+  .animate-ripple { animation: ripple 1.5s ease-out; }
+  .animate-shimmer { animation: shimmer 2s linear infinite; }
+  .animate-slide-in { animation: slide-in 0.5s ease-out; }
+  .animate-scale-in { animation: scale-in 0.3s ease-out; }
+}
