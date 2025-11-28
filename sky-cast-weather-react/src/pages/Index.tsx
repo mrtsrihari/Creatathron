@@ -119,8 +119,8 @@ const Index = () => {
 
         {/* Footer */}
         <footer className="text-center text-muted-foreground text-sm py-8 animate-slide-in">
-          <p>© 2024 SkyCast. Made with ❤️ using React & TypeScript</p>
-          <p className="mt-2">Mock data - No external APIs used</p>
+          <p>2025 AIML-B </p>
+          <p className="mt-2">Srihari-Visnu-Salmon-Yugesh</p>
         </footer>
       </div>
     </div>
