@@ -224,12 +224,5 @@ Contributions are welcome! Feel free to:
 
 This project is open source and available under the MIT License.
 
-## 👏 Acknowledgments
 
-- Weather icons from Lucide React
-- Inspiration from modern weather apps
-- Built with Lovable's AI-powered development platform
-- Mock weather data for demonstration purposes
-
----
 
