@@ -2,8 +2,6 @@
 
 A beautiful, modern weather application built with React, TypeScript, and Tailwind CSS. SkyCast delivers stunning interactive weather forecasts with animated weather effects, intelligent avatars, and seamless user experience.
 
-![SkyCast Preview](https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=1200&q=80)
-
 ## ✨ Features
 
 ### 🔍 **Smart City Search**
@@ -230,7 +228,3 @@ This project is open source and available under the MIT License.
 - Inspiration from modern weather apps
 - Built with Lovable's AI-powered development platform
 - Mock weather data for demonstration purposes
-
----
-
-**Made with ❤️ and React** | [Visit Lovable](https://lovable.dev) | [Documentation](https://docs.lovable.dev)
