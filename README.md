@@ -233,4 +233,3 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Made with ❤️ and React** | [Visit Lovable](https://lovable.dev) | [Documentation](https://docs.lovable.dev)
